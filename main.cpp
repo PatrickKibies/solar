@@ -3,8 +3,6 @@
 #include "newton.h"
 #include "vector_operations.h"
 
-
-
 int main(int argc, char **argv) {
   double f_mEarth, f_mSun, f_r;
   f_mEarth = 5.972e24;
