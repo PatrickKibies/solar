@@ -21,8 +21,8 @@ int main(int argc, char **argv) {
   vect2.zeros();
   
   //Set some values
-  vect1(0) = 149.6e9;
-  vect1(1) = 0;
+  vect1(0) = 149.6e9 * std::cos(3.141);
+  vect1(1) = 149.6e9 * std::sin(3.141);
   vect1(2) = 0;
   vect2(2) = 0;
   vect2(1) = 0;
@@ -30,7 +30,11 @@ int main(int argc, char **argv) {
   
   std::cout << "Vectorial calculation of Force:"<<std::endl;
   std::cout << vec_grav_force_3D(vec_distanceVec(vect1,vect2),f_mEarth,f_mSun) << std::endl;
-    
+  std::cout << "Force vector norm: " << std::endl;
+  std::cout << norm(vec_grav_force_3D(vec_distanceVec(vect1,vect2),f_mEarth,f_mSun)) << std::endl;  
+  
+  
+  
   return 0;
 }
 
