@@ -27,14 +27,10 @@ int main(int argc, char **argv) {
   vect2(2) = 0;
   vect2(1) = 0;
   vect2(0) = 0;
-
-
   
   std::cout << "Vectorial calculation of Force:"<<std::endl;
-  std::cout << vec_grav_force_3D(vec_distance(vect1,vect2),f_mEarth,f_mSun) << std::endl;
-  
- 
-  
+  std::cout << vec_grav_force_3D(vec_distanceVec(vect1,vect2),f_mEarth,f_mSun) << std::endl;
+    
   return 0;
 }
 

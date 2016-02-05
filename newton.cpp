@@ -10,7 +10,7 @@ double f_acceleration(double f_m, double f_f){
 }
 
 arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_m1, double f_m2){
-    double f_distance;
+  double f_distance;
   arma::vec vec_force, vec_unitvector;
   vec_force.set_size(vec_distance.n_elem);
   vec_unitvector.set_size(vec_distance.n_elem);
