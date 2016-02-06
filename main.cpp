@@ -1,13 +1,18 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <armadillo>
+#include <math.h>
 #include "newton.h"
 #include "vector_operations.h"
 
+
+
 int main(int argc, char **argv) {
-  double f_mEarth, f_mSun, f_r;
-  f_mEarth = 5.972e24;
-  f_mSun = 1.989e30;
-  f_r = 149.6e9;
+  
+  double f_mEarth, f_mSun, f_r; 
+    f_mEarth = 5.972e24; 
+  f_mSun = 1.989e30; 
+  f_r = 149.6e9; 
    
  double f_Force = f_grav_force(f_mSun,f_mEarth,f_r);
   std::cout << "May the force be " << f_Force << std::endl;  
@@ -20,9 +25,13 @@ int main(int argc, char **argv) {
   vect1.zeros(); //initialize with 0
   vect2.zeros();
   
+  
+  
+  float f_angle = (0./360.) * (2. * M_PI);
+  
   //Set some values
-  vect1(0) = 149.6e9 * std::cos(3.141);
-  vect1(1) = 149.6e9 * std::sin(3.141);
+  vect1(0) = 149.6e9 * std::cos(f_angle);
+  vect1(1) = 149.6e9 * std::sin(f_angle);
   vect1(2) = 0;
   vect2(2) = 0;
   vect2(1) = 0;
@@ -32,9 +41,7 @@ int main(int argc, char **argv) {
   std::cout << vec_grav_force_3D(vec_distanceVec(vect1,vect2),f_mEarth,f_mSun) << std::endl;
   std::cout << "Force vector norm: " << std::endl;
   std::cout << norm(vec_grav_force_3D(vec_distanceVec(vect1,vect2),f_mEarth,f_mSun)) << std::endl;  
-  
-  
-  
+   
   return 0;
 }
 
