@@ -1,26 +1,28 @@
 #include <armadillo>
+ /** Sets a preprocessor directive for the gravitational constants in m^3 / kg s^2 in order to safe just 8 bytes of RAM... */
+#define GRAVCON 6.67408e-11
 
-double f_grav_force(double f_m1, double f_m2, double f_r){
-  double f_gravcon = 6.67408e-11; //m³ / (kg s^2)
-  return (f_gravcon * f_m1*f_m2/(f_r*f_r)); // Newton
+/** Calculates a scalar garvitational force from two masses and their scalar distance*/
+double f_grav_force(double f_mass1, double f_mass2, double f_distance){
+  return (GRAVCON * f_mass1*f_mass2/(f_distance*f_distance));
  }
 
-double f_acceleration(double f_m, double f_f){
-  return f_f/f_m;
+ 
+ /** Calculates the acceleration from a given mass and a given acceleration.*/
+double f_acceleration(double f_mass, double f_force){
+  return f_force/f_mass;
 }
 
-arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_m1, double f_m2){  /// calculates a 3D gravitational force vector from a distance vector and two masses. 
+/**Calculates a 3D gravitational force vector from a distance vector and two masses. Uses armadillo functions and datatypes. */
+arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_mass1, double f_mass2){  
+  
   double f_distance;
-  arma::vec vec_force, vec_unitvector;
-  vec_force.set_size(vec_distance.n_elem);
+  arma::vec vec_unitvector;
   vec_unitvector.set_size(vec_distance.n_elem);
-  vec_force.zeros();
   vec_unitvector.zeros();
     
   f_distance = norm(vec_distance,2); 
     
   vec_unitvector = normalise(vec_distance,2); //Normalised vector 
-  vec_force = vec_unitvector * f_grav_force(f_m1, f_m2, f_distance);
-   
-  return vec_force;
- }
+  return vec_unitvector * f_grav_force(f_mass1, f_mass2, f_distance);
+}
