@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 project(solar)
 
+
+set(CMAKE_BUILD_TYPE Debug)
+
 find_package(Armadillo)
 
 add_library(newton newton.h newton.cpp)
