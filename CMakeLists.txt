@@ -10,13 +10,14 @@ add_library(newton newton.h newton.cpp)
 add_library(vectorOps vector_operations.h vector_operations.cpp)
 add_library(particle particle.h particle.cpp)
 add_library(dynamics dynamics.h dynamics.cpp)
+add_library(solar_io solar_io.h solar_io.cpp)
 add_executable(solar main.cpp)
 
-target_link_libraries(solar newton armadillo particle)
-target_link_libraries(newton vectorOps armadillo)
+
 target_link_libraries(particle newton armadillo)
 target_link_libraries(newton vectorOps armadillo)
-target_link_libraries(solar newton dynamics armadillo)
+target_link_libraries(solar newton dynamics armadillo particle solar_io)
+
 
 
 

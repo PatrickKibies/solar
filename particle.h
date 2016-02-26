@@ -15,7 +15,7 @@ class particle
     float f_massPower;
     double d_mass;
     int i_number;
-    
+    float f_radius;
    
     
     void createAParticle(int number); //creates a particle as an object

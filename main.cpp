@@ -10,6 +10,7 @@
 #include "particle.h"
 #include "dynamics.h"
 #include <math.h>
+#include "solar_io.h"
 
 //#include <graphics.h>
 
@@ -34,6 +35,8 @@ int main(int argc, char **argv) {
   for(int i=1; i<i_tnp;i++){
     arrayOfAllParticles[i].createAParticle(i);
   };
+  
+  makePSF(arrayOfAllParticles, i_tnp);
   
   myfile.open ("example.txt");
   for(int step=0; step<i_numTimeSteps;step++){

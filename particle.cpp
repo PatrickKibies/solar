@@ -32,6 +32,8 @@ void particle::createAParticle(int number){
   l_min=1e10;
   l_max=2e10;
   
+  f_radius=200000;
+  
   float mass_LO=1.0;
   float mass_HI=9.9;
   //std::srand(42);
