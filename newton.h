@@ -10,7 +10,4 @@ arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_m1, double f_m2); /
 
 
 
-
-
-
 #endif
