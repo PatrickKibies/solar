@@ -44,7 +44,7 @@ arma::vec vec_grav_acceleration(arma::vec vec_distance, double f_mass_object, do
 	if (DEBUG){
 	  std::cout << "newton.cpp -> vec_grav_acceleration DEBUG BEGIN" << std::endl;
 	  std::cout << "vec_distance" << vec_distance << std::endl << std::endl;
-	   std::cout << "distance" << distance << std::endl << std::endl;
+	  std::cout << "distance" << distance << std::endl << std::endl;
 	  std::cout << "f_mass_object --- f_mass_central" << f_mass_object << " --- " << f_mass_central;
 	  std::cout << "vec_unitvector" << vec_unitvector << std::endl << std::endl;
 	  std::cout << "force" << force <<std::endl;

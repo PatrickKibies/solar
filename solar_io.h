@@ -4,10 +4,11 @@
 # include "particle.h"
 # include <sstream>
 # include <vector>
-
+#include "boost/format.hpp"
 
 
 void makePSF(std::vector<particle> arrayOfAllParticles, int i_tnp);
-std::string write_dcd_line(std::vector <arma::vec> particle_positions);
+std::string create_amber_line(std::vector <particle> particles);
+std::string create_amber_header();
 
 

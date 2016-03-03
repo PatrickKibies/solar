@@ -2,6 +2,7 @@
 #define PARTICLE_H
 #include <armadillo>
 #include <vector>
+#include "dynamics.h"
 
 class particle
 {
@@ -25,25 +26,23 @@ class particle
     long l_randomNr;
     arma::vec vec_dist;
     
-    void getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp);	/* calculates the force vectors to all other particles 
-										   and summs them up. The acceleration is calculed from 
-										   this main force vector */
-										   
-    void getNewLocation(int i_timeStep);
+    void getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp);	//* calculates the force vectors to all other particles  and sums them up. The acceleration is calculated from this main force vector
+    void propagate(double d_timeStep); //* Performs a verlet time step for this particle
+    void setCurrentLocation(arma::vec vec_setLocation); 
+    void setOldLocation(arma::vec vec_setLocation);
+    void setForce(arma::vec vec_inForce);
+    void addToForce(arma::vec vec_inForce);
+    void calculateAcceleration(); //* This method calculates the current acceleration from the current force vector and the particles mass
+    
+    
+    arma::vec getCurrentLocation();
+    arma::vec getOldLocation();
+    
 										   
  private: int i_potenz;
 	  float f_prefactor;
 
 };   
     
-
-
-/*
-class particle
-{
-public:
-    void createAParticle(int number);
-};
-*/
 
 #endif // PARTICLE_H
