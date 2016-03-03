@@ -60,7 +60,7 @@ void particle::createAParticle(int number){
   vec_location0(2) = vec_location1(2) + number*3e4;
   
   
-};
+}
   
 
 void particle::getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp){
@@ -71,9 +71,9 @@ void particle::getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp)
 	vec_mainForce = vec_mainForce + vec_internForce;
 	arrayOfAllParticles[i].vec_mainForce = arrayOfAllParticles[i].vec_mainForce - vec_internForce;
 	vec_internForce.zeros();
-      };
+      }
       vec_mainAcceleration=(vec_mainForce/d_mass);
-};
+}
   
 
 
@@ -81,7 +81,7 @@ void particle::propagate(double d_timeStep){
   vec_location2 = vec_verlet_step(vec_location0, vec_location1, vec_mainAcceleration, d_timeStep);
   vec_location0 = vec_location1;
   vec_location1 = vec_location2;
-};
+}
 
 
 void particle::setCurrentLocation(arma::vec vec_inLocation){
