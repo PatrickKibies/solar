@@ -36,8 +36,8 @@ void particle::createAParticle(int number){
   
   f_radius=200000; // @ KowalskiTheP What does that mean?
   
-  double mass_LO=1.0;
-  double mass_HI=9.9;
+ // double mass_LO=1.0;
+ // double mass_HI=9.9;
   //std::srand(42);
   /*f_massPower =20 + (std::rand() % (int)(25 - 20 + 1));
   f_massFactor= mass_LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(mass_HI-mass_LO)));
@@ -46,8 +46,8 @@ void particle::createAParticle(int number){
   d_mass = 3e24;
   i_number=number;
 
-  float LO=-9.0;
-  float HI=9.0;
+  // float LO=-9.0;
+  // float HI=9.0;
   
   vec_location1(0) = std::sin(0.2*number*3.1415) * 149e9 + (number*2e10);
   vec_location1(1) = std::cos(0.2*number*3.1415) * 149e9 - (number*2e10);

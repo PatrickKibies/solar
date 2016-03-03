@@ -22,23 +22,23 @@ psfFile << i_tnp << " !NATOM" << std::endl;
 
 for(int i=0; i<i_tnp;i++){
   psfFile << " "<< arrayOfAllParticles[i].i_number << " U    1    MET  N    NH3 " << arrayOfAllParticles[i].f_radius << arrayOfAllParticles[i].d_mass << " 0" << std::endl;
-};
+}
 
 psfFile.close();
 
-};
+}
 
 
 std::string create_amber_line(std::vector <particle> particles){ // The whole stringstream business is not working right now - but formatting works. Maybe I shall switch to plain strings.
   
-  int i_particleCount = particles.size();
+  uint i_particleCount = particles.size();
   std::string ss_temp;
   int count_linemembers = 0; 
   boost::format fmt_string("%1$8.3f ");
   
   
-  for (uint ii = 0; ii<i_particleCount; ii++){  
-    for (uint jj = 0; jj<particles[ii].vec_location1.size(); jj++){
+  for (uint ii = 0; ii < i_particleCount; ii++){  
+    for (uint jj = 0; jj <particles[ii].vec_location1.size(); jj++){
       count_linemembers++;
      
     if(jj<particles[ii].vec_location1.size()){
