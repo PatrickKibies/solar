@@ -65,3 +65,19 @@ std::string create_amber_header()
 return "Solar greetz!\n";
 }
 
+
+void writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
+  
+}
+
+void writePositionXYZ(std::vector<particle> &particles, std::string s_filename){
+  
+}
+
+arma::vec readXYZ(std::string s_filename){
+  
+}
+
+std::vector<particle> readParticles(std::string s_velocityFilename, std::string s_positionFilename, std::string s_topologyFilename){
+  
+}
