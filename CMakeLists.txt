@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project(solar)
 
 
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -g3  -Og -fopenmp -pedantic -fopt-info -ftree-vectorize -ftree-vectorizer-verbose=2")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -g3 -Og -fopenmp -pedantic -fopt-info -ftree-vectorize -ftree-vectorizer-verbose=2")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -O2 -fopenmp -ftree-vectorize -fopt-info -ftree-vectorizer-verbose=2")
 
 find_package(Armadillo)
@@ -19,7 +19,7 @@ add_executable(solar main.cpp)
 target_link_libraries(solar_io ${Boost_LIBRARIES})
 target_link_libraries(particle newton armadillo dynamics)
 target_link_libraries(newton vectorOps armadillo)
-target_link_libraries(solar newton dynamics armadillo particle solar_io)
+target_link_libraries(solar newton dynamics armadillo particle solar_io boost_system ${Boost_LIBRARIES} ${Boost_TIMER_LIBRARY})
 
 
 

@@ -14,14 +14,18 @@ std::ofstream psfFile;
 
 void makePSF(std::vector<particle> arrayOfAllParticles, int i_tnp){ //Thisroutine does not produce valid PSF files - let's redo that with boost::format
 
+//boost::format format_psf_Line(" %1d %2$3s %3$4d %4$7s %5$4s %6$4s %7$9.6f %8$9.4s %11d");
+boost::format format_psf_Line(" %7d %-5s%-5d%-5s%-5s%-5s %3.6f%9.4s%11d");    
+  
+  
 psfFile.open ("test.psf");
-psfFile << "PSF CMAP" << std::endl;
-
-
-psfFile << i_tnp << " !NATOM" << std::endl;
+psfFile << "PSF CMAP" << std::endl; //Write header line  of PSF file
+psfFile << i_tnp << " !NATOM" << std::endl; // Write 
 
 for(int i=0; i<i_tnp;i++){
-  psfFile << " "<< arrayOfAllParticles[i].i_number << " U    1    MET  N    NH3 " << arrayOfAllParticles[i].f_radius << arrayOfAllParticles[i].d_mass << " 0" << std::endl;
+  //psfFile << " "<< arrayOfAllParticles[i].i_number << " U    1    MET  N    NH3 " << arrayOfAllParticles[i].f_radius << arrayOfAllParticles[i].d_mass << " 0" << std::endl;
+  psfFile << format_psf_Line % i % "U" % 1 % "MET" % "N" % "N" %   arrayOfAllParticles[i].f_radius % arrayOfAllParticles[i].d_mass % 0 << std::endl; 
+  
 }
 
 psfFile.close();

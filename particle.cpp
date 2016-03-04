@@ -43,10 +43,10 @@ void particle::createAParticle(int number){
   f_massFactor= mass_LO + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(mass_HI-mass_LO)));
   d_mass=f_massFactor*pow(10,f_massPower);*/
   
-  d_mass = 3e24;
+  d_mass =5e24;
   i_number=number;
 
-  // float LO=-9.0;
+  // ifloat LO=-9.0;
   // float HI=9.0;
   
   vec_location1(0) = std::sin(0.2*number*3.1415) * 149e9 + (number*2e10);
@@ -57,7 +57,7 @@ void particle::createAParticle(int number){
   
   
   vec_location0 = vec_location1;
-  vec_location0(2) = vec_location1(2) + number*3e4;
+  vec_location0(2) = vec_location1(2) + 3e4;
   
   
 }

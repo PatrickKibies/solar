@@ -1,4 +1,5 @@
 #define _USE_MATH_DEFINES
+#include <boost/timer/timer.hpp>
 #include <iostream>
 #include <armadillo>
 #include <vector>
@@ -19,8 +20,9 @@ int main(int argc, char **argv) {
   double f_mEarth, d_mSun, f_r;
   f_mEarth = 5.972e24;
   d_mSun = 1.989e30;
+  //d_mSun = 1;
   f_r = 149.6e9;
-  int i_tnp=2; //total number of particels
+  int i_tnp=500; //total number of particels
   int i_numTimeSteps=10000; //Number of time steps
   int i_timeStep=3600*24; //in [s]
   
@@ -44,9 +46,9 @@ int main(int argc, char **argv) {
   arrayOfAllParticles[1].vec_location1(1) = 30e3 * i_timeStep;
   arrayOfAllParticles[1].d_mass=f_mEarth;
   
- /* for(int i=1; i<i_tnp;i++){
+  for(int i=2; i<i_tnp;i++){
     arrayOfAllParticles[i].createAParticle(i);
-  };*/
+  }
   
   
   makePSF(arrayOfAllParticles, i_tnp);
@@ -57,7 +59,7 @@ int main(int argc, char **argv) {
   file_trajectory << create_amber_line(arrayOfAllParticles);
   
   for(int step=0; step<i_numTimeSteps;step++){// Time Step loop
-	  
+	 // boost::timer::auto_cpu_timer t;
     for (int i_parti = 0; i_parti < i_tnp; i_parti++){
       
       arrayOfAllParticles[i_parti].vec_mainForce.zeros(); //set all Forces to 0,0,0 for new timestep!
@@ -67,9 +69,10 @@ int main(int argc, char **argv) {
     
     
     for(int i=0; i<i_tnp;i++){  //Outer Force calculation loop over all particles
+#pragma openmp parallel for
       for (int jj = i+1; jj<i_tnp; jj++){
 	  
-//	  std::cout << "Calculating force between " << i << " and " << jj;
+	//  std::cout << "Calculating force between " << i << " and " << jj << std::endl;
 	  
 	  
 	  arma::vec temp_force;
