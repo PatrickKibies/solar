@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yannic/projects/solar/dynamics.h
+armadillo
+-
+
+/home/yannic/projects/solar/particle.h
+armadillo
+-
+vector
+-
+dynamics.h
+/home/yannic/projects/solar/dynamics.h
+
+/home/yannic/projects/solar/solar_io.cpp
+iostream
+-
+string
+-
+istream
+-
+sstream
+-
+vector
+-
+particle.h
+/home/yannic/projects/solar/particle.h
+boost/format.hpp
+/home/yannic/projects/solar/boost/format.hpp
+

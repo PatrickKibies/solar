@@ -17,14 +17,18 @@
 
 
 int main(int argc, char **argv) {
-  double f_mEarth, d_mSun, f_r;
-  f_mEarth = 5.972e24;
-  d_mSun = 1.989e30;
-  //d_mSun = 1;
-  f_r = 149.6e9;
-  int i_tnp=500; //total number of particels
+  //Internal units: 
+  //Length in 1e9 m
+  //Mass in 1e21 kg
+  //Time in 1e15 s
+  
+  double d_mEarth, d_mSun, d_r;
+  d_mEarth = 5972000; //in Yg
+  d_mSun = 1989000000000; //in Yg
+  d_r = 149.5978707; //in Gm
+  int i_tnp=50; //total number of particels
   int i_numTimeSteps=10000; //Number of time steps
-  int i_timeStep=3600*24; //in [s]
+  double d_timeStep=0.00000000008640; //in [Ps]
   
   std::ofstream myfile, file_trajectory;
   std::vector<particle> arrayOfAllParticles(i_tnp);
@@ -41,10 +45,10 @@ int main(int argc, char **argv) {
   arrayOfAllParticles[1].createAParticle(1);
   arrayOfAllParticles[1].vec_location0.zeros();
   arrayOfAllParticles[1].vec_location1.zeros();
-  arrayOfAllParticles[1].vec_location0(0) = f_r;
+  arrayOfAllParticles[1].vec_location0(0) = d_r;
   arrayOfAllParticles[1].vec_location1 = arrayOfAllParticles[1].vec_location0;
-  arrayOfAllParticles[1].vec_location1(1) = 30e3 * i_timeStep;
-  arrayOfAllParticles[1].d_mass=f_mEarth;
+  arrayOfAllParticles[1].vec_location1(1) = 29780000000 * d_timeStep;
+  arrayOfAllParticles[1].d_mass=d_mEarth;
   
   for(int i=2; i<i_tnp;i++){
     arrayOfAllParticles[i].createAParticle(i);
@@ -74,7 +78,6 @@ int main(int argc, char **argv) {
 	  
 	//  std::cout << "Calculating force between " << i << " and " << jj << std::endl;
 	  
-	  
 	  arma::vec temp_force;
 	  temp_force.set_size(3);
 	  temp_force.zeros();
@@ -89,7 +92,7 @@ int main(int argc, char **argv) {
       
       for(int i=0; i<i_tnp;i++){
 	arrayOfAllParticles[i].calculateAcceleration();
-	arrayOfAllParticles[i].propagate(i_timeStep);
+	arrayOfAllParticles[i].propagate(d_timeStep);
 	
   	myfile << step << " ";
 	
@@ -104,11 +107,15 @@ int main(int argc, char **argv) {
 }
   myfile.close();
   file_trajectory.close();
+  
+  /*
   std::cout << "Position of the first Particle:" << std::endl;
   std::cout << arrayOfAllParticles[0].vec_location1 << std::endl;
   std::cout << "Main force vector of the first Particle:" << std::endl;
   std::cout << arrayOfAllParticles[0].vec_mainForce << std::endl;
   std::cout << "Main accelaration vector of the first Particle:" << std::endl;
   std::cout << arrayOfAllParticles[0].vec_mainAcceleration << std::endl;
+  */
+  
   return 0;
 }

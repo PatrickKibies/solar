@@ -46,7 +46,8 @@ std::string create_amber_line(std::vector <particle> particles){ // The whole st
       count_linemembers++;
      
     if(jj<particles[ii].vec_location1.size()){
-      fmt_string % (particles[ii].vec_location1[jj]/149e9);
+      //fmt_string % (particles[ii].vec_location1[jj]/149e9);
+      fmt_string % (particles[ii].vec_location1[jj]/1e2); //Division is needed to make the coordinates suitable for VMD
       ss_temp.append(fmt_string.str());
     }
   

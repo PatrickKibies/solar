@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yannic/projects/solar/dynamics.h
+armadillo
+-
+
+/home/yannic/projects/solar/newton.h
+armadillo
+-
+
+/home/yannic/projects/solar/particle.cpp
+vector
+-
+armadillo
+-
+cstdlib
+-
+math.h
+-
+particle.h
+/home/yannic/projects/solar/particle.h
+newton.h
+/home/yannic/projects/solar/newton.h
+vector_operations.h
+/home/yannic/projects/solar/vector_operations.h
+dynamics.h
+/home/yannic/projects/solar/dynamics.h
+
+/home/yannic/projects/solar/particle.h
+armadillo
+-
+vector
+-
+dynamics.h
+/home/yannic/projects/solar/dynamics.h
+
+/home/yannic/projects/solar/vector_operations.h
+armadillo
+-
+

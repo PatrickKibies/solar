@@ -1,0 +1,1 @@
+/usr/bin/c++   -g -Wall -g3 -Og -fopenmp -pedantic -fopt-info -ftree-vectorize -ftree-vectorizer-verbose=2    CMakeFiles/solar.dir/main.cpp.o  -o solar -rdynamic libnewton.a libdynamics.a -larmadillo libparticle.a libsolar_io.a -lboost_system libnewton.a libvectorOps.a libdynamics.a -larmadillo 
