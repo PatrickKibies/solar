@@ -88,6 +88,7 @@ solar: libsolar_io.a
 solar: libnewton.a
 solar: libvectorOps.a
 solar: libdynamics.a
+solar: libphysics.a
 solar: CMakeFiles/solar.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable solar"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solar.dir/link.txt --verbose=$(VERBOSE)

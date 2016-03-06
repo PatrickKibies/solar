@@ -5,5 +5,6 @@ CMakeFiles/particle.dir/particle.cpp.o: ../dynamics.h
 CMakeFiles/particle.dir/particle.cpp.o: ../newton.h
 CMakeFiles/particle.dir/particle.cpp.o: ../particle.cpp
 CMakeFiles/particle.dir/particle.cpp.o: ../particle.h
+CMakeFiles/particle.dir/particle.cpp.o: ../physics.h
 CMakeFiles/particle.dir/particle.cpp.o: ../vector_operations.h
 

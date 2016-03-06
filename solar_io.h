@@ -9,6 +9,9 @@
 #include <boost/property_tree/ini_parser.hpp>
 
 void makePSF(std::vector<particle> arrayOfAllParticles, int i_tnp);
+
+std::string create_energy_entry(std::vector <particle> particles);
+
 std::string create_amber_line(std::vector <particle> particles);
 std::string create_amber_header();
 

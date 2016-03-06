@@ -10,11 +10,35 @@
 armadillo
 -
 
+/home/yannic/projects/solar/newton.h
+armadillo
+-
+
 /home/yannic/projects/solar/particle.h
 armadillo
 -
 vector
 -
+dynamics.h
+/home/yannic/projects/solar/dynamics.h
+physics.h
+/home/yannic/projects/solar/physics.h
+
+/home/yannic/projects/solar/physics.h
+vector
+-
+armadillo
+-
+cstdlib
+-
+math.h
+-
+particle.h
+/home/yannic/projects/solar/particle.h
+newton.h
+/home/yannic/projects/solar/newton.h
+vector_operations.h
+/home/yannic/projects/solar/vector_operations.h
 dynamics.h
 /home/yannic/projects/solar/dynamics.h
 
@@ -33,4 +57,8 @@ particle.h
 /home/yannic/projects/solar/particle.h
 boost/format.hpp
 /home/yannic/projects/solar/boost/format.hpp
+
+/home/yannic/projects/solar/vector_operations.h
+armadillo
+-
 

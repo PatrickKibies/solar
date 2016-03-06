@@ -13,11 +13,12 @@ add_library(vectorOps vector_operations.h vector_operations.cpp)
 add_library(particle particle.h particle.cpp)
 add_library(dynamics dynamics.h dynamics.cpp)
 add_library(solar_io solar_io.h solar_io.cpp)
+add_library(physics physics.h physics.cpp)
 add_executable(solar main.cpp)
 
 
 target_link_libraries(solar_io ${Boost_LIBRARIES})
-target_link_libraries(particle newton armadillo dynamics)
+target_link_libraries(particle newton armadillo dynamics physics)
 target_link_libraries(newton vectorOps armadillo)
 target_link_libraries(solar newton dynamics armadillo particle solar_io boost_system ${Boost_LIBRARIES} ${Boost_TIMER_LIBRARY})
 

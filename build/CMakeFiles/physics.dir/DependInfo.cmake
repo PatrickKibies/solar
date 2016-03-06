@@ -4,18 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yannic/projects/solar/main.cpp" "/home/yannic/projects/solar/build/CMakeFiles/solar.dir/main.cpp.o"
+  "/home/yannic/projects/solar/physics.cpp" "/home/yannic/projects/solar/build/CMakeFiles/physics.dir/physics.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/yannic/projects/solar/build/CMakeFiles/newton.dir/DependInfo.cmake"
-  "/home/yannic/projects/solar/build/CMakeFiles/dynamics.dir/DependInfo.cmake"
-  "/home/yannic/projects/solar/build/CMakeFiles/particle.dir/DependInfo.cmake"
-  "/home/yannic/projects/solar/build/CMakeFiles/solar_io.dir/DependInfo.cmake"
-  "/home/yannic/projects/solar/build/CMakeFiles/vectorOps.dir/DependInfo.cmake"
-  "/home/yannic/projects/solar/build/CMakeFiles/physics.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

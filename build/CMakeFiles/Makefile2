@@ -126,9 +126,10 @@ clean: CMakeFiles/newton.dir/clean
 # Target rules for target CMakeFiles/particle.dir
 
 # All Build rule for target.
-CMakeFiles/particle.dir/all: CMakeFiles/vectorOps.dir/all
+CMakeFiles/particle.dir/all: CMakeFiles/physics.dir/all
 CMakeFiles/particle.dir/all: CMakeFiles/dynamics.dir/all
 CMakeFiles/particle.dir/all: CMakeFiles/newton.dir/all
+CMakeFiles/particle.dir/all: CMakeFiles/vectorOps.dir/all
 	$(MAKE) -f CMakeFiles/particle.dir/build.make CMakeFiles/particle.dir/depend
 	$(MAKE) -f CMakeFiles/particle.dir/build.make CMakeFiles/particle.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  3
@@ -141,7 +142,7 @@ all: CMakeFiles/particle.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/particle.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/particle.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 0
 .PHONY : CMakeFiles/particle.dir/rule
@@ -160,17 +161,53 @@ clean: CMakeFiles/particle.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/physics.dir
+
+# All Build rule for target.
+CMakeFiles/physics.dir/all:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/depend
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  4
+	@echo "Built target physics"
+.PHONY : CMakeFiles/physics.dir/all
+
+# Include target in all.
+all: CMakeFiles/physics.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/physics.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/physics.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 0
+.PHONY : CMakeFiles/physics.dir/rule
+
+# Convenience name for target.
+physics: CMakeFiles/physics.dir/rule
+.PHONY : physics
+
+# clean rule for target.
+CMakeFiles/physics.dir/clean:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/clean
+.PHONY : CMakeFiles/physics.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/physics.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/solar.dir
 
 # All Build rule for target.
-CMakeFiles/solar.dir/all: CMakeFiles/particle.dir/all
-CMakeFiles/solar.dir/all: CMakeFiles/vectorOps.dir/all
+CMakeFiles/solar.dir/all: CMakeFiles/physics.dir/all
 CMakeFiles/solar.dir/all: CMakeFiles/dynamics.dir/all
 CMakeFiles/solar.dir/all: CMakeFiles/newton.dir/all
+CMakeFiles/solar.dir/all: CMakeFiles/vectorOps.dir/all
+CMakeFiles/solar.dir/all: CMakeFiles/particle.dir/all
 CMakeFiles/solar.dir/all: CMakeFiles/solar_io.dir/all
 	$(MAKE) -f CMakeFiles/solar.dir/build.make CMakeFiles/solar.dir/depend
 	$(MAKE) -f CMakeFiles/solar.dir/build.make CMakeFiles/solar.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  5
 	@echo "Built target solar"
 .PHONY : CMakeFiles/solar.dir/all
 
@@ -180,7 +217,7 @@ all: CMakeFiles/solar.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/solar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/solar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yannic/projects/solar/build/CMakeFiles 0
 .PHONY : CMakeFiles/solar.dir/rule
@@ -205,7 +242,7 @@ clean: CMakeFiles/solar.dir/clean
 CMakeFiles/solar_io.dir/all:
 	$(MAKE) -f CMakeFiles/solar_io.dir/build.make CMakeFiles/solar_io.dir/depend
 	$(MAKE) -f CMakeFiles/solar_io.dir/build.make CMakeFiles/solar_io.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  6
 	@echo "Built target solar_io"
 .PHONY : CMakeFiles/solar_io.dir/all
 
@@ -240,7 +277,7 @@ clean: CMakeFiles/solar_io.dir/clean
 CMakeFiles/vectorOps.dir/all:
 	$(MAKE) -f CMakeFiles/vectorOps.dir/build.make CMakeFiles/vectorOps.dir/depend
 	$(MAKE) -f CMakeFiles/vectorOps.dir/build.make CMakeFiles/vectorOps.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yannic/projects/solar/build/CMakeFiles  7
 	@echo "Built target vectorOps"
 .PHONY : CMakeFiles/vectorOps.dir/all
 

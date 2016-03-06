@@ -241,7 +241,10 @@ dynamics_LIB_DEPENDS:STATIC=
 newton_LIB_DEPENDS:STATIC=general;vectorOps;general;armadillo;
 
 //Dependencies for the target
-particle_LIB_DEPENDS:STATIC=general;newton;general;armadillo;general;dynamics;
+particle_LIB_DEPENDS:STATIC=general;newton;general;armadillo;general;dynamics;general;physics;
+
+//Dependencies for target
+physics_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 solar_BINARY_DIR:STATIC=/home/yannic/projects/solar/build

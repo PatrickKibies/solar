@@ -3,5 +3,8 @@
 
 CMakeFiles/solar_io.dir/solar_io.cpp.o
  /home/yannic/projects/solar/dynamics.h
+ /home/yannic/projects/solar/newton.h
  /home/yannic/projects/solar/particle.h
+ /home/yannic/projects/solar/physics.h
  /home/yannic/projects/solar/solar_io.cpp
+ /home/yannic/projects/solar/vector_operations.h

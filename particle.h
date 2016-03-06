@@ -3,6 +3,7 @@
 #include <armadillo>
 #include <vector>
 #include "dynamics.h"
+#include "physics.h"
 
 class particle
 {
@@ -15,6 +16,9 @@ class particle
     float f_massFactor;
     float f_massPower;
     double d_mass;
+    double d_Epot;
+    double d_intern_Epot;
+    double d_Ekin;
     int i_number;
     float f_radius;
    
@@ -32,6 +36,8 @@ class particle
     void setOldLocation(arma::vec vec_setLocation);
     void setForce(arma::vec vec_inForce);
     void addToForce(arma::vec vec_inForce);
+    void setEpot(double vec_inEpot);
+    void addToEpot(double vec_inEpot);
     void calculateAcceleration(); //* This method calculates the current acceleration from the current force vector and the particles mass
     
     

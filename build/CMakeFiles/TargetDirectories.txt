@@ -1,6 +1,7 @@
 /home/yannic/projects/solar/build/CMakeFiles/dynamics.dir
 /home/yannic/projects/solar/build/CMakeFiles/newton.dir
 /home/yannic/projects/solar/build/CMakeFiles/particle.dir
+/home/yannic/projects/solar/build/CMakeFiles/physics.dir
 /home/yannic/projects/solar/build/CMakeFiles/solar.dir
 /home/yannic/projects/solar/build/CMakeFiles/solar_io.dir
 /home/yannic/projects/solar/build/CMakeFiles/vectorOps.dir

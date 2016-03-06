@@ -183,6 +183,19 @@ particle/fast:
 .PHONY : particle/fast
 
 #=============================================================================
+# Target rules for targets named physics
+
+# Build rule for target.
+physics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 physics
+.PHONY : physics
+
+# fast build rule for target.
+physics/fast:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/build
+.PHONY : physics/fast
+
+#=============================================================================
 # Target rules for targets named solar
 
 # Build rule for target.
@@ -317,6 +330,30 @@ particle.cpp.s:
 	$(MAKE) -f CMakeFiles/particle.dir/build.make CMakeFiles/particle.dir/particle.cpp.s
 .PHONY : particle.cpp.s
 
+physics.o: physics.cpp.o
+.PHONY : physics.o
+
+# target to build an object file
+physics.cpp.o:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/physics.cpp.o
+.PHONY : physics.cpp.o
+
+physics.i: physics.cpp.i
+.PHONY : physics.i
+
+# target to preprocess a source file
+physics.cpp.i:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/physics.cpp.i
+.PHONY : physics.cpp.i
+
+physics.s: physics.cpp.s
+.PHONY : physics.s
+
+# target to generate assembly for a file
+physics.cpp.s:
+	$(MAKE) -f CMakeFiles/physics.dir/build.make CMakeFiles/physics.dir/physics.cpp.s
+.PHONY : physics.cpp.s
+
 solar_io.o: solar_io.cpp.o
 .PHONY : solar_io.o
 
@@ -379,6 +416,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... newton"
 	@echo "... particle"
+	@echo "... physics"
 	@echo "... rebuild_cache"
 	@echo "... solar"
 	@echo "... solar_io"
@@ -395,6 +433,9 @@ help:
 	@echo "... particle.o"
 	@echo "... particle.i"
 	@echo "... particle.s"
+	@echo "... physics.o"
+	@echo "... physics.i"
+	@echo "... physics.s"
 	@echo "... solar_io.o"
 	@echo "... solar_io.i"
 	@echo "... solar_io.s"

@@ -8,6 +8,7 @@
 #include "newton.h"
 #include "vector_operations.h"
 #include "dynamics.h"
+#include "physics.h"
   
 
   
@@ -31,6 +32,8 @@ void particle::createAParticle(int number){
   vec_internForce.set_size(3);
   vec_internForce.zeros();
   
+  d_intern_Epot=0;
+  
   l_min=1e10;
   l_max=2e10;
   
@@ -45,6 +48,7 @@ void particle::createAParticle(int number){
   
   d_mass =5972000;
   i_number=number;
+  d_Epot=0;
 
   // ifloat LO=-9.0;
   // float HI=9.0;
@@ -69,9 +73,13 @@ void particle::getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp)
       for(int i=i_number+1;i<i_tnp;i=i+1){  
 	vec_dist = vec_distanceVec(vec_location1,arrayOfAllParticles[i].vec_location1);
 	vec_internForce = vec_grav_force_3D(vec_dist, d_mass, arrayOfAllParticles[i].d_mass);
+	//d_intern_Epot = d_calc_Epot(vec_dist, d_mass, arrayOfAllParticles[i].d_mass); 
 	vec_mainForce = vec_mainForce + vec_internForce;
+	//d_Epot = d_Epot + d_intern_Epot;
 	arrayOfAllParticles[i].vec_mainForce = arrayOfAllParticles[i].vec_mainForce - vec_internForce;
-	vec_internForce.zeros();
+	//arrayOfAllParticles[i].d_Epot = arrayOfAllParticles[i].d_Epot + d_intern_Epot;
+	//vec_internForce.zeros();
+	//d_intern_Epot=0;
       }
       vec_mainAcceleration=(vec_mainForce/d_mass);
 }
@@ -95,12 +103,20 @@ void particle::setCurrentLocation(arma::vec vec_inLocation){
    }
 
    
- void particle::setForce(arma::vec vec_inForce){
+void particle::setForce(arma::vec vec_inForce){
    vec_mainForce = vec_inForce;
 }
 
 void particle::addToForce(arma::vec vec_inForce){
       vec_mainForce = vec_inForce + vec_mainForce;
+}
+
+void particle::setEpot(double d_inEpot){
+   d_Epot = d_inEpot;
+}
+
+void particle::addToEpot(double d_inEpot){
+   d_Epot = d_Epot + d_inEpot;
 }
 
 void particle::calculateAcceleration()

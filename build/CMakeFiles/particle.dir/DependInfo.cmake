@@ -12,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/yannic/projects/solar/build/CMakeFiles/newton.dir/DependInfo.cmake"
   "/home/yannic/projects/solar/build/CMakeFiles/dynamics.dir/DependInfo.cmake"
+  "/home/yannic/projects/solar/build/CMakeFiles/physics.dir/DependInfo.cmake"
   "/home/yannic/projects/solar/build/CMakeFiles/vectorOps.dir/DependInfo.cmake"
   )
 

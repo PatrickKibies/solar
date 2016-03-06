@@ -5,6 +5,7 @@ CMakeFiles/solar.dir/main.cpp.o: ../dynamics.h
 CMakeFiles/solar.dir/main.cpp.o: ../main.cpp
 CMakeFiles/solar.dir/main.cpp.o: ../newton.h
 CMakeFiles/solar.dir/main.cpp.o: ../particle.h
+CMakeFiles/solar.dir/main.cpp.o: ../physics.h
 CMakeFiles/solar.dir/main.cpp.o: ../solar_io.h
 CMakeFiles/solar.dir/main.cpp.o: ../vector_operations.h
 

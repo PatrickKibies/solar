@@ -47,6 +47,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/dynamics.dir/DependInfo.cmake"
   "CMakeFiles/newton.dir/DependInfo.cmake"
   "CMakeFiles/particle.dir/DependInfo.cmake"
+  "CMakeFiles/physics.dir/DependInfo.cmake"
   "CMakeFiles/solar.dir/DependInfo.cmake"
   "CMakeFiles/solar_io.dir/DependInfo.cmake"
   "CMakeFiles/vectorOps.dir/DependInfo.cmake"
