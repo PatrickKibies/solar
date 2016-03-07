@@ -1,2 +1,0 @@
-/usr/bin/ar cr libdynamics.a  CMakeFiles/dynamics.dir/dynamics.cpp.o
-/usr/bin/ranlib libdynamics.a

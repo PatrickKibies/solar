@@ -1,2 +1,0 @@
-/usr/bin/ar cr libvectorOps.a  CMakeFiles/vectorOps.dir/vector_operations.cpp.o
-/usr/bin/ranlib libvectorOps.a

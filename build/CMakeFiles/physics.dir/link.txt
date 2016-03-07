@@ -1,2 +1,0 @@
-/usr/bin/ar cr libphysics.a  CMakeFiles/physics.dir/physics.cpp.o
-/usr/bin/ranlib libphysics.a

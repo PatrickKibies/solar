@@ -1,2 +1,0 @@
-/usr/bin/ar cr libsolar_io.a  CMakeFiles/solar_io.dir/solar_io.cpp.o
-/usr/bin/ranlib libsolar_io.a

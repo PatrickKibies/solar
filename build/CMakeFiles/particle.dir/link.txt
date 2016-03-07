@@ -1,2 +1,0 @@
-/usr/bin/ar cr libparticle.a  CMakeFiles/particle.dir/particle.cpp.o
-/usr/bin/ranlib libparticle.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr libnewton.a  CMakeFiles/newton.dir/newton.cpp.o
-/usr/bin/ranlib libnewton.a
