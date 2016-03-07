@@ -1,6 +1,6 @@
 #include <armadillo>
  /** Sets a preprocessor directive for the gravitational constants in m^3 / kg s^2 in order to safe just 8 bytes of RAM... */
-#define GRAVCON 6.67408e-11
+#define GRAVCON 66740800000
 #define DEBUG 0
 
 /** Calculates a scalar garvitational force from two masses and their scalar distance*/
