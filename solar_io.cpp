@@ -79,7 +79,7 @@ return "Solar greetz!\n";
 }
 
 
-void writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
+vo mnnnid writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
   
 }
 
