@@ -14,6 +14,8 @@
   
 void particle::createAParticle(int number){
 
+  s_type = "N";
+  
   vec_location0.set_size(3);
   vec_location1.set_size(3);
   vec_location2.set_size(3);

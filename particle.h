@@ -8,11 +8,11 @@
 class particle
 {
   public:
-    arma::vec vec_location0,vec_location1, vec_location2;
-    arma::vec vec_speed0,vec_speed1,vec_speed2;
-    arma::vec vec_mainForce;
-    arma::vec vec_internForce;
-    arma::vec vec_mainAcceleration;
+    arma::vec vec_location0,vec_location1, vec_location2; //* Position holding vectors
+    arma::vec vec_speed0,vec_speed1,vec_speed2; //* velocity holding vectors
+    arma::vec vec_mainForce; //* Holds the mean force the particle experiences
+    arma::vec vec_internForce; //* ????
+    arma::vec vec_mainAcceleration; //* Mean acceleration of this particle
     float f_massFactor;
     float f_massPower;
     double d_mass;
@@ -21,7 +21,7 @@ class particle
     double d_Ekin;
     int i_number;
     float f_radius;
-   
+    std::string s_type;
     
     void createAParticle(int number); //creates a particle as an object
     
@@ -39,8 +39,6 @@ class particle
     void setEpot(double vec_inEpot);
     void addToEpot(double vec_inEpot);
     void calculateAcceleration(); //* This method calculates the current acceleration from the current force vector and the particles mass
-    
-    
     arma::vec getCurrentLocation();
     arma::vec getOldLocation();
     

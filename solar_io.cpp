@@ -5,7 +5,8 @@
 # include <vector>
 # include "particle.h"
 # include "boost/format.hpp"
-
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
 //    1231 !NATOM
 //       1 U    1    MET  N    NH3   -0.300000       14.0070           0
 
@@ -78,12 +79,25 @@ std::string create_amber_header()
 return "Solar greetz!\n";
 }
 
-
-vo mnnnid writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
+void writePositionXYZ(std::vector<particle> particles, std::string s_filename){
   
+  std::ofstream file_outXYZ;
+  file_outXYZ.open(s_filename.c_str());
+  std::string s_xyzline;
+  boost::format fmt_xyzline("%1$s %2$10.6f %3$10.6f %4$10.6f");
+  arma::vec vec_location;
+  
+  for(int ii = 0; ii<particles.size(); ii++){
+     vec_location = particles[ii].vec_location1;
+    fmt_xyzline %particles[ii].s_type % vec_location(0) % vec_location(1) % vec_location(2);
+    file_outXYZ << fmt_xyzline.str() <<std::endl;
+        
+  }
+
+  file_outXYZ.close();
 }
 
-void writePositionXYZ(std::vector<particle> &particles, std::string s_filename){
+void writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
   
 }
 
