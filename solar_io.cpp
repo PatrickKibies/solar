@@ -79,7 +79,7 @@ std::string create_amber_header()
 return "Solar greetz!\n";
 }
 
-void writePositionXYZ(std::vector<particle> particles, std::string s_filename){
+void writePositionXYZ(std::vector<particle> &particles, std::string s_filename){
   
   std::ofstream file_outXYZ;
   file_outXYZ.open(s_filename.c_str());
@@ -97,9 +97,23 @@ void writePositionXYZ(std::vector<particle> particles, std::string s_filename){
   file_outXYZ.close();
 }
 
-void writeVelocityXYZ(std::vector<particle> &particles, std::string s_filename){
+void writeVelocityXYZ(std::vector<particle> &particles,double &d_timestep, std::string s_filename){
+  std::ofstream file_outXYZ;
+  file_outXYZ.open(s_filename.c_str());
+  std::string s_xyzline;
+  boost::format fmt_xyzline("%1$s %2$10.6f %3$10.6f %4$10.6f");
+  arma::vec vec_velocity;
   
+  for(int ii = 0; ii<particles.size(); ii++){
+     vec_velocity = (particles[ii].vec_location1-particles[ii].vec_location0)/d_timestep;
+    fmt_xyzline %particles[ii].s_type % vec_velocity(0) % vec_velocity(1) % vec_velocity(2);
+    file_outXYZ << fmt_xyzline.str() <<std::endl;
+        
+  }
+
+  file_outXYZ.close();
 }
+
 
 arma::vec readXYZ(std::string s_filename){
   

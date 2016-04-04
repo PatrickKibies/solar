@@ -10,7 +10,7 @@
 
 
 /* Main function of this library are calculating  potential and kinatic energy as well as adding them up.
-   Its planed that, there is at some point in time, the option to save the energys as properties of particles or 
+   Its planned that, there is at some point in time, the option to save the energys as properties of particles or 
    to save it as one value (more performance oriented). */
 
 double d_getEpot(arma::vec vec_distance, double f_mass1, double f_mass2){

@@ -125,6 +125,7 @@ int main(int argc, char **argv) {
     
     file_trajectory << create_amber_line(arrayOfAllParticles);
     writePositionXYZ(arrayOfAllParticles, "position.xyz");
+    writeVelocityXYZ(arrayOfAllParticles,d_timeStep ,"speed.xyz");
     energies << create_energy_entry(arrayOfAllParticles);
 }
   myfile.close();
