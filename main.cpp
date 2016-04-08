@@ -19,6 +19,13 @@
 //#include <graphics.h>
 
 
+/**
+ * \file main.cpp
+ * Main Routine of the solar project. Here the whole workflow happens while most of the functionality is encapsulated in the particle class and its methods as well as in a bunch of libraries
+ * */
+
+
+
 int main(int argc, char **argv) {
   //Internal units: 
   //Length in 1e9 m

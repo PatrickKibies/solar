@@ -2,14 +2,9 @@
 #include <armadillo>
 #include <cstdlib>
 #include <math.h>
-#include "physics.h"
-#include "particle.h"
-#include "newton.h"
-#include "vector_operations.h"
-#include "dynamics.h"
 
 
-/* Main function of this library are calculating  potential and kinatic energy as well as adding them up.
+/** \file physics.cpp Main function of this library are calculating  potential and kinetic energy as well as adding them up.
    Its planned that, there is at some point in time, the option to save the energys as properties of particles or 
    to save it as one value (more performance oriented). */
 

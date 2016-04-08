@@ -3,18 +3,44 @@
 #define GRAVCON 66740800000
 #define DEBUG 0
 
-/** Calculates a scalar garvitational force from two masses and their scalar distance*/
+/**
+ * @file newton.cpp
+ * @brief Routines for classical mechanics
+
+ This file contains a set of functions which are related to classical mechanics. You will find routines for calculating garvitational forces and acccelerations.
+ */
+
+/** 
+ @brief  Calculates a scalar garvitational force from two masses and their scalar distance 
+ */
+
+
+/**
+ * @brief Calculates a scalar gravitational force between two bodies
+ * @param f_mass1 Mass of the first body
+ * @param f_mass2 Mass of the second body
+ * @param f_distance scalar distance between both bodies
+ * @return Scalar force between both bodies
+ * */
+
 double f_grav_force(double f_mass1, double f_mass2, double f_distance){
   return (GRAVCON * f_mass1*f_mass2/(f_distance*f_distance));
  }
 
  
- /** Calculates the acceleration from a given mass and a given force.*/
+ /** @brief Calculates the acceleration from a given mass and a given force.
+    @param f_mass mass of body
+    @param f_force force applied to the body
+    @return scalar acceleration of the body*/
 double f_acceleration(double f_mass, double f_force){
   return f_force/f_mass;
 }
 
-/**Calculates a 3D gravitational force vector from a distance vector and two masses. Uses armadillo functions and datatypes. */
+/** @brief Calculates a 3D gravitational force vector from a distance vector and two masses. Uses armadillo functions and datatypes. 
+    @param vec_distance armadillo vector holding the distance between the bodies
+    @param f_mass1 mass of first body
+    @param f_mass2 mass of second body
+    @return armadillo vector between both bodies*/
 arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_mass1, double f_mass2){  
   
   double f_distance;
@@ -28,7 +54,12 @@ arma::vec vec_grav_force_3D(arma::vec vec_distance, double f_mass1, double f_mas
   return vec_unitvector * f_grav_force(f_mass1, f_mass2, f_distance);
 }
 
-
+/**
+@brief Calculates an acceleration vector from given masses and distance vecctor
+@param vec_distance distance vector between the bodies
+@param f_mass_object mass of accelerated vector
+@param f_mass_central mass of fixed object
+*/
 arma::vec vec_grav_acceleration(arma::vec vec_distance, double f_mass_object, double f_mass_central){
 
 	double distance = norm(vec_distance,2);

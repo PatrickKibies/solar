@@ -5,6 +5,14 @@
 #include "dynamics.h"
 #include "physics.h"
 
+/**
+\class particle
+The class particle contains all functionality concerning a single particle. It provides methods and attributes to get all relevant data and manipulations to a particle (i.e. calculating the forces or do a verlet integration step)
+*/
+
+
+
+
 class particle
 {
   public:
