@@ -94,7 +94,7 @@ void particle::getAllForces(std::vector<particle>arrayOfAllParticles, int i_tnp)
 	//d_intern_Epot = d_calc_Epot(vec_dist, d_mass, arrayOfAllParticles[i].d_mass); 
 	vec_mainForce = vec_mainForce + vec_internForce;
 	//d_Epot = d_Epot + d_intern_Epot;
-	arrayOfAllParticles[i].vec_mainForce = arrayOfAllParticles[i].vec_mainForce - vec_internForce
+	arrayOfAllParticles[i].vec_mainForce = arrayOfAllParticles[i].vec_mainForce - vec_internForce;
 	//arrayOfAllParticles[i].d_Epot = arrayOfAllParticles[i].d_Epot + d_intern_Epot;
 	//vec_internForce.zeros();
 	//d_intern_Epot=0;
